@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inori.wtf | Nixsec!</title>
+    <style>
+        body {
+            background-color: black; /* Set background color to black */
+            color: white; /* Set text color to white */
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer; /* Add cursor:pointer to indicate it's clickable */
+            background-size: cover;
+            overflow: hidden; /* Prevent scrollbars from appearing */
+        }
+
+        .loader {
+            opacity: 1;
+            transition: opacity 1s ease-out;
+        }
+
+        .loader.fade-out {
+            opacity: 0;
+        }
+
+        .nix {
+            font-size: large;
+            display: none; /* Initially hide the content */
+            color: transparent;
+            animation: moveAround 10s infinite, rainbow 5s infinite; /* You can adjust the durations as needed */
+        }
+
+        @keyframes moveAround {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(50px, 50px); }
+            50% { transform: translate(100px, 0); }
+            75% { transform: translate(50px, -50px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        @keyframes rainbow {
+            0% { color: red; }
+            16.666% { color: orange; }
+            33.333% { color: yellow; }
+            50% { color: green; }
+            66.666% { color: blue; }
+            83.333% { color: indigo; }
+            100% { color: violet; }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader" onclick="fadeLoaderOut()">Click To Enter..</div>
+    <audio id="bg" src="SNIPERZ.mp3" loop="loop"></audio>
+    <div class="nix">nix was here</div>
+    <script>
+        document.addEventListener("click", fadeLoaderOut);
+
+        function fadeLoaderOut() {
+            var loader = document.querySelector('.loader');
+            var nixContent = document.querySelector('.nix');
+            var audio = document.getElementById("bg");
+
+            loader.classList.add('fade-out'); // Add fade-out class for transition
+            audio.play(); // Start playing audio
+
+            // Set a timeout to hide the loader and show the content after the transition
+            setTimeout(function() {
+                loader.style.display = 'none';
+                nixContent.style.display = 'flex';
+                document.body.style.backgroundImage = "url('Hello_User_How_Is_Your_Night_My_Night_Is_Going_Pretty_Okay.gif')";
+            }, 1000); // 1000ms (1s) is the duration of the fade-out transition
+        }
+    </script>
+</body>
+</html>
