@@ -6,8 +6,8 @@
     <title>inori.wtf | Nixsec!</title>
     <style>
         body {
-            background-color: black; 
-            color: white; 
+            background-color: black; /* Set background color to black */
+            color: white; /* Set text color to white */
             height: 100vh;
             padding: 0;
             margin: 0;
@@ -15,9 +15,9 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            cursor: pointer;
+            cursor: pointer; /* Add cursor:pointer to indicate it's clickable */
             background-size: cover;
-            overflow: hidden; 
+            overflow: hidden; /* Prevent scrollbars from appearing */
         }
 
         .loader {
@@ -30,10 +30,12 @@
         }
 
         .nix {
-            font-size: large;
-            display: none;
-            color: transparent;
-            animation: moveAround 10s infinite, rainbow 5s infinite; /* You can adjust the durations as needed */
+            position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 48px;
+      text-align: center;
         }
 
         @keyframes moveAround {
@@ -58,7 +60,7 @@
 <body>
     <div class="loader" onclick="fadeLoaderOut()">Click To Enter..</div>
     <div class="nix">nix was here</div>
-    <video autoplay loop id="bg-video" class="fullscreen-bg-video">
+    <video autoplay muted loop id="bg-video" class="fullscreen-bg-video">
         <source src="https://nanitecdn.b-cdn.net/nix/sweet.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -70,13 +72,12 @@
             var nixContent = document.querySelector('.nix');
             var video = document.getElementById("bg-video");
 
-            loader.classList.add('fade-out');
-
+            loader.classList.add('fade-out'); 
             setTimeout(function() {
                 loader.style.display = 'none';
-                nixContent.style.display = 'block'; 
+                nixContent.style.display = 'flex';
                 video.style.display = 'block';
-            }, 1000); 
+            }, 1000); // 1000ms (1s) is the duration of the fade-out transition
         }
     </script>
 </body>
