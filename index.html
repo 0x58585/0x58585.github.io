@@ -57,24 +57,26 @@
 </head>
 <body>
     <div class="loader" onclick="fadeLoaderOut()">Click To Enter..</div>
-    <audio id="bg" src="SNIPERZ.mp3" loop="loop"></audio>
     <div class="nix">nix was here</div>
+    <video autoplay muted loop id="bg-video" class="fullscreen-bg-video">
+        <source src="sweet.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <script>
         document.addEventListener("click", fadeLoaderOut);
 
         function fadeLoaderOut() {
             var loader = document.querySelector('.loader');
             var nixContent = document.querySelector('.nix');
-            var audio = document.getElementById("bg");
+            var video = document.getElementById("bg-video");
 
             loader.classList.add('fade-out'); // Add fade-out class for transition
-            audio.play(); // Start playing audio
 
             // Set a timeout to hide the loader and show the content after the transition
             setTimeout(function() {
                 loader.style.display = 'none';
                 nixContent.style.display = 'flex';
-                document.body.style.backgroundImage = "url('Hello_User_How_Is_Your_Night_My_Night_Is_Going_Pretty_Okay.gif')";
+                video.style.display = 'block';
             }, 1000); // 1000ms (1s) is the duration of the fade-out transition
         }
     </script>
