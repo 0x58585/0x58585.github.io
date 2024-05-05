@@ -127,6 +127,12 @@
         });
       playText.style.display = 'block';
     }
+    function hideElement() {
+      const playTextElement = document.querySelector('.play-text');
+      playTextElement.style.display = 'none';
+    }
+
+    document.body.addEventListener('click', hideElement);
 
     video.addEventListener('play', playVideo);
     video.addEventListener('pause', pauseVideo);
