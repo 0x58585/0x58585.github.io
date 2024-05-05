@@ -6,8 +6,8 @@
     <title>inori.wtf | Nixsec!</title>
     <style>
         body {
-            background-color: black; /* Set background color to black */
-            color: white; /* Set text color to white */
+            background-color: black; 
+            color: white; 
             height: 100vh;
             padding: 0;
             margin: 0;
@@ -15,9 +15,9 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            cursor: pointer; /* Add cursor:pointer to indicate it's clickable */
+            cursor: pointer;
             background-size: cover;
-            overflow: hidden; /* Prevent scrollbars from appearing */
+            overflow: hidden; 
         }
 
         .loader {
@@ -31,7 +31,7 @@
 
         .nix {
             font-size: large;
-            display: none; /* Initially hide the content */
+            display: none;
             color: transparent;
             animation: moveAround 10s infinite, rainbow 5s infinite; /* You can adjust the durations as needed */
         }
@@ -70,14 +70,13 @@
             var nixContent = document.querySelector('.nix');
             var video = document.getElementById("bg-video");
 
-            loader.classList.add('fade-out'); // Add fade-out class for transition
+            loader.classList.add('fade-out');
 
-            // Set a timeout to hide the loader and show the content after the transition
             setTimeout(function() {
                 loader.style.display = 'none';
-                nixContent.style.display = 'flex';
+                nixContent.style.display = 'block'; 
                 video.style.display = 'block';
-            }, 1000); // 1000ms (1s) is the duration of the fade-out transition
+            }, 1000); 
         }
     </script>
 </body>
